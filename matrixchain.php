@@ -207,9 +207,10 @@
 				{				
 					if($dimensions[$i][0] != $dimensions[$i-1][1])
 					{
-						echo("<br/>Invalid Matrix Dimensions. Refreshing...");
-						header("Refresh:2; url=matrixchain.php");
+						echo("<br/>Invalid Matrix Dimensions.<br/>Column count of a Matrix must match Row count of the following Matrix.<br/>Refreshing...");
+						header("Refresh:5; url=matrixchain.php");
 						$valid = false;
+						break;
 					}
 				}
 				
