@@ -104,14 +104,16 @@
 					}
 				}
 			}
-		}	
+		}
+		
+		$final = $cost[1][$n-1]; //final result ***SHOULD*** be in top-right cell of matrix
 		
 		echo("<div>");
 		printMatrix($cost, $n, "Cost Matrix");
 		printMatrix($splitIndex, $n, "Split-Index Matrix");
 		echo("</div>");
 		
-		return $result[1][$n-1];
+		return $final;
 	}
 	
 	
@@ -129,7 +131,7 @@
 			{
 				echo("<td>");
 				
-				if($arr[$i][$j] == 0)//check for blanks in array
+				if($arr[$i][$j] == 0)//check for blanks in array (PHP sometimes changes 0s to blanks during output)
 				{echo("0");}
 				else
 				{echo($arr[$i][$j]);}
